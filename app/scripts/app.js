@@ -1,12 +1,12 @@
+/* global app:true */
 'use strict';
 
-angular
-  .module('angularjsAppApp', [
+var app = angular.module('angularjsAppApp', [
     'ngCookies',
     'ngSanitize',
     'ngRoute'
   ])
-  .config(function ($routeProvider) {
+  app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
