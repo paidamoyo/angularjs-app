@@ -3,6 +3,7 @@
 
 var app = angular.module('angularjsAppApp', [
     'ngCookies',
+    'ngResource',
     'ngSanitize',
     'ngRoute'
   ]);
