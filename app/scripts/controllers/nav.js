@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('NavCtrl', function($scope, $location, Post){
+app.controller('NavCtrl', function($scope, $location, Post, Auth){
   $scope.post = {url: 'http://', title: ''};
 
   $scope.submitPost = function() {
@@ -9,4 +9,9 @@ app.controller('NavCtrl', function($scope, $location, Post){
       $scope.post = {url: 'http://', title: ''};
     });
   };
+
+  $scope.logout = function() {
+    Auth.logout();
+  };
+
 });
