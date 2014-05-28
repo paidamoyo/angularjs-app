@@ -5,9 +5,11 @@ var app = angular.module('angularjsAppApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'firebase'
   ]);
 
+app.constant('FIREBASE_URL', 'https://vivid-fire-3195.firebaseio.com/');
 app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
