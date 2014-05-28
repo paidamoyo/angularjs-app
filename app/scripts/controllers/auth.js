@@ -8,8 +8,8 @@ app.controller('AuthCtrl', function($scope, $location, Auth){
 
   $scope.register = function() {
     Auth.register($scope.user).then(function(authUser){
-    console.log(authUser);
-    $location.path('/');
+      console.log(authUser);
+      $location.path('/');
     });
   };
 });
