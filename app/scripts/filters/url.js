@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 app.filter('hostnameFromUrl', function(){
   return function(str) {
