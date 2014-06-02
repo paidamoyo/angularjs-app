@@ -15,7 +15,7 @@ app.controller('AuthCtrl', function($scope, $location, Auth, User){
       $location.path('/');
     }, function(error){
       $scope.error = error.toString();
-      console.log($scope.error)
+      console.log($scope.error);
     });
   };
   
