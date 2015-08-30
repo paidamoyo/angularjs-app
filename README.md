@@ -1,6 +1,4 @@
-angularjs-app
-=============
+CRUD GRE words 
+===============
 
-angularjs app
-
-[Tutorial] (http://www.thinkster.io/angularjs/hu3iP704S4/)
+Keep track of GRE words progress
