@@ -1,9 +1,6 @@
-'use strict';
-
 describe('App configuration', function () {
-
-  // load the controller's module
-  beforeEach(module('greWordsApps'));
+  'use strict';
+  beforeEach(module('greWordsApp'));
 
   describe('routes', function () {
     var route;
@@ -18,6 +15,16 @@ describe('App configuration', function () {
 
       it('should use the correct controller', function () {
         expect(route.routes['/'].controller).toEqual('WordsController');
+      });
+    });
+
+    describe('word page', function () {
+      it('should use the correct template', function () {
+        expect(route.routes['/words/:wordId'].templateUrl).toEqual('views/showword.html');
+      });
+
+      it('should use the correct controller', function () {
+        expect(route.routes['/words/:wordId'].controller).toEqual('WordViewController');
       });
     });
   });
