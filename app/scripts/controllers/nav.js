@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('NavCtrl', function($scope, $location, Word){
+app.controller('NavController', function($scope, $location, Word){
   $scope.word = {url: 'http://', title: ''};
 
   $scope.submitWord = function() {

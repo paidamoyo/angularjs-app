@@ -1,24 +1,27 @@
-/* global app:true */
-'use strict';
 
-var app = angular.module('greWordsApps', [
+(function () {
+  /* global app:true */
+  'use strict';
+
+  var app = angular.module('greWordsApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
     'ngRoute'
   ]);
 
-app.config(function ($routeProvider) {
+  app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/words.html',
-        controller: 'WordsCtrl'
+        controller: 'WordsController'
       })
       .when('/words/:wordId', {
         templateUrl: 'views/showword.html',
-        controller: 'WordViewCtrl'
+        controller: 'WordViewController'
       })
       .otherwise({
         redirectTo: '/'
       });
   });
+}());

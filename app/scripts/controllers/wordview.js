@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('WordViewCtrl', function($scope, $routeParams, Word){
+app.controller('WordViewController', function($scope, $routeParams, Word){
   $scope.word = Word.find($routeParams.wordId);
 
 });
