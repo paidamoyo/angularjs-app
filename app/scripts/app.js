@@ -1,36 +1,22 @@
 /* global app:true */
 'use strict';
 
-var app = angular.module('angularjsAppApp', [
+var app = angular.module('greWordsApps', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute',
-    'firebase'
+    'ngRoute'
   ]);
 
-app.constant('FIREBASE_URL', 'https://vivid-fire-3195.firebaseio.com/');
 app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/posts.html',
-        controller: 'PostsCtrl'
+        templateUrl: 'views/words.html',
+        controller: 'WordsCtrl'
       })
-      .when('/posts/:postId', {
-        templateUrl: 'views/showpost.html',
-        controller: 'PostViewCtrl'
-      })
-      .when('/register', {
-        templateUrl:'views/register.html',
-        controller: 'AuthCtrl'
-      })
-      .when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'AuthCtrl'
-      })
-      .when('/users/:username', {
-        templateUrl: 'views/profile.html',
-        controller: 'ProfileCtrl'
+      .when('/words/:wordId', {
+        templateUrl: 'views/showword.html',
+        controller: 'WordViewCtrl'
       })
       .otherwise({
         redirectTo: '/'
