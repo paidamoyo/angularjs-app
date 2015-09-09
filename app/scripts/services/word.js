@@ -1,18 +1,29 @@
-'use strict';
+(function () {
+  'use strict';
 
-app.factory('Word', function () {
+  app.factory('Word', function () {
+    var mongojs = require('mongojs');
+    var grewords = 'grewords';
+    var db = mongojs('grewordsdb', [greWords]);
 
-  var words;
+    var words = db.grewords.find(function (err, docs) {
+      return docs;
+    });
 
-  return {
-    all: words,
+    return {
+      all: words,
 
-    create: function (word) {
+      create: function (word) {
+        db.grewords.save({created: word})
+      },
 
-    },
-
-    find: function (wordId) {
-      return posts.$child(wordId);
-    }
-  };
-});
+      find: function (wordId) {
+        db.grewords.findOne({
+          _id: mongojs.ObjectId(wordId)
+        }, function (err, doc) {
+          return doc;
+        })
+      }
+    };
+  })
+}());
